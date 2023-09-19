@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilos.css">
+      <title>GPT- JAVASCRIPT</title>
+</head>
+
+<body>
+      <main id="main">
+
+            <aside id="chats">
+
+                  <div id="botones">
+
+                        <div class="boton" id="nueva-conversacion">+ New chat</div>
+
+                        <div class="boton">
+
+                              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                    stroke-linecap="round" stroke-linejoin="round" class="icon-sm" height="1em"
+                                    width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                              </svg>
+
+                        </div>
+                  </div>
+
+                  <!-- área de registro de las conversaciones -->
+                  <div class="conversaciones">
+
+
+                  </div>
+
+
+                  <div id="perfil">
+
+                        <div class="perfil-usuario">+ Upgrade to Plus <span>NEW</span></div>
+
+                        <div class="perfil-usuario">
+
+                              <img src="img/27716.svg" alt="usuario">
+
+                              <div>
+                                    <p>Christopher Moreno ...</p>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </aside>
+
+            <section id="preguntas">
+
+                  <div class="versiones" style="display: flex;">
+
+                        <button id="boton-1">
+
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"
+                                    class="icon-sm transition-colors text-brand-green" width="16" height="16"
+                                    style="color: rgb(26, 210, 26);">
+                                    <path d="M9.586 1.526A.6.6 0 0 0 8.553 1l-6.8 7.6a.6.6 0 0 0 .447 1h5.258l-1.044 4.874A.6.6 0 0 0 7.447 15l6.8-7.6a.6.6 0 0 0-.447-1H8.542l1.044-4.874Z"
+                                          fill="currentColor">
+                                    </path>
+                              </svg>
+                              <p>GPT-3.5</p>
+
+                        </button>
+
+                        <button id="boton-2" style="background-color: #202020;">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"
+                                    class="icon-sm transition-colors group-hover/button:text-brand-purple" width="16"
+                                    height="16">
+                                    <path d="M12.784 1.442a.8.8 0 0 0-1.569 0l-.191.953a.8.8 0 0 1-.628.628l-.953.19a.8.8 0 0 0 0 1.57l.953.19a.8.8 0 0 1 .628.629l.19.953a.8.8 0 0 0 1.57 0l.19-.953a.8.8 0 0 1 .629-.628l.953-.19a.8.8 0 0 0 0-1.57l-.953-.19a.8.8 0 0 1-.628-.629l-.19-.953h-.002ZM5.559 4.546a.8.8 0 0 0-1.519 0l-.546 1.64a.8.8 0 0 1-.507.507l-1.64.546a.8.8 0 0 0 0 1.519l1.64.547a.8.8 0 0 1 .507.505l.546 1.641a.8.8 0 0 0 1.519 0l.546-1.64a.8.8 0 0 1 .506-.507l1.641-.546a.8.8 0 0 0 0-1.519l-1.64-.546a.8.8 0 0 1-.507-.506L5.56 4.546Zm5.6 6.4a.8.8 0 0 0-1.519 0l-.147.44a.8.8 0 0 1-.505.507l-.441.146a.8.8 0 0 0 0 1.519l.44.146a.8.8 0 0 1 .507.506l.146.441a.8.8 0 0 0 1.519 0l.147-.44a.8.8 0 0 1 .506-.507l.44-.146a.8.8 0 0 0 0-1.519l-.44-.147a.8.8 0 0 1-.507-.505l-.146-.441Z"
+                                          fill="currentColor">
+                                    </path>
+                              </svg>
+                              <p style="color: gray;">GPT-4</p>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    aria-hidden="true"
+                                    class="icon-sm ml-0.5 transition-colors sm:ml-0 group-hover/options:text-gray-500 !text-gray-500 -ml-2 group-hover/button:text-brand-purple">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
+                                          clip-rule="evenodd">
+                                    </path>
+                              </svg>
+                        </button>
+
+                  </div>
+
+                  <div id="contenedor-ventanas">
+
+                        <div id="ventanaEmergente" class="ventana" style="display: none;">
+
+                              <strong>Our fastest model, great for most everyday <br> tasks</strong>
+                              <p><small style="color: gray;">Available to Free and Plus users</small></p>
+
+                        </div>
+
+                        <div id="ventanaEmergente-2" class="ventana" style="display: none;">
+
+                              <strong>
+                                    Our most capable model, great for <br>tasks that require creativity <br> and advanced
+                                    reasoning
+                              </strong>
+                              <p><small style="color: gray;">Available to Free and Plus users</small></p>
+                              <p><small style="color: gray;">GPT-4 currently has a cap of 25 messages every 3
+                                          hours</small>
+                              </p>
+
+                              <div style="text-align: center;">
+
+                                    <button>Upgrade to ChatGPT Plus</button>
+
+                              </div>
+
+                        </div>
+                        
+                  </div>
+
+
+                  <div id="seccion-respuestas">
+
+                        <h1 class="remove">ChatGPT</h1>
+                        <div id="output"></div>
+
+                  </div>
+
+                  <div id="footer">
+
+                        <div id="opciones-contenedor" class="remove">
+
+                              <div id="opciones">
+
+                                    <div class="opciones-chat">
+
+                                          <p class="strong">Show me a code snippet</p>
+                                          <p>of a website's sticky header</p>
+                                    </div>
+                                    <div class="opciones-chat">
+                                          <p class="strong">Brainstorm names</p>
+                                          <p>for a non-alcoholic cocktail with Coke and pomegranas</p>
+                                    </div>
+                                    <div class="opciones-chat">
+                                          <p class="strong">Come up with concepts</p>
+                                          <p>for a retro-style arcade game</p>
+                                    </div>
+                                    <div class="opciones-chat">
+                                          <p class="strong">Write a Python Script</p>
+                                          <p>to automate sending daily email reports</p>
+                                    </div>
+
+
+                              </div>
+
+                        </div>
+
+
+                        <div id="input-contenedor">
+
+                              <div class="input">
+
+                                    <input type="text" placeholder="Send a message" id="prompt">
+                                    <div class="icon-container">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="15" viewBox="0 0 16 16"
+                                                fill="none" class="icon-sm m-1 md:m-0">
+                                                <path d="M.5 1.163A1 1 0 0 1 1.97.28l12.868 6.837a1 1 0 0 1 0 1.766L1.969 15.72A1 1 0 0 1 .5 14.836V10.33a1 1 0 0 1 .816-.983L8.5 8 1.316 6.653A1 1 0 0 1 .5 5.67V1.163Z"
+                                                      fill="currentColor"></path>
+                                          </svg>
+                                    </div>
+
+                              </div>
+
+                              <div class="info-small">
+                                    <strong style="display: block;">Free Research Preview. ChatGPT may produce
+                                          inaccurate
+                                          information about people, places,
+                                          or facts.</strong>
+                                    <small>ChatGPT August 3 Version</small>
+                              </div>
+                        </div>
+                  </div>
+
+            </section>
+
+      </main>
+
+      <script src="app.js"></script>
+
+</body>
+
+</html>
